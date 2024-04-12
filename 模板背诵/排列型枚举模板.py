@@ -186,31 +186,58 @@
 # print(cnt)
 
 
-#第八遍
-chosen=[0]*20
+# #第八遍
+# chosen=[0]*20
+# order=[0]*20
+# n=0
+# cnt=0
+
+# def calc(x):
+#     if x==n+1:
+#         for i in range(1,n+1):
+#             print(order[i],end="")
+#         print()
+#         global cnt 
+#         cnt +=1
+#         return 
+    
+#     for i in range(1,n+1):
+#         if chosen[i]==1:
+#             continue
+#         chosen[i]=1
+#         order[x]=i
+#         calc(x+1)
+#         chosen[i]=0
+#         order[x]=0
+
+# n=int(input())
+
+# calc(1)
+# print(cnt)
+
+#第九遍
 order=[0]*20
+chosen=[0]*20
+
 n=0
 cnt=0
-
 def calc(x):
     if x==n+1:
         for i in range(1,n+1):
-            print(order[i],end="")
+            print(order[i],end=" ")
         print()
-        global cnt 
-        cnt +=1
-        return 
-    
+        global cnt
+        cnt+=1
+        return
     for i in range(1,n+1):
         if chosen[i]==1:
             continue
-        chosen[i]=1
         order[x]=i
+        chosen[i]=1
         calc(x+1)
         chosen[i]=0
         order[x]=0
 
 n=int(input())
-
 calc(1)
 print(cnt)
