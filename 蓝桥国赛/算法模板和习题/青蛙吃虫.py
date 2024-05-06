@@ -5,9 +5,8 @@
 #dp[i][j] 表示跳了i次后，当前处在j位置能吃到的最大昆虫数
 #dp[0][0]=0
 #dp[i][j]=dp[i-1][j_]  a<=j-j_<=b
-T=int(input())
-INF=10**18
-for i in range(T):
+
+def solve():
     n,A,B,K=map(int,input().split())
     a=[0]+list(map(int,input().split()))
     ans=0
@@ -21,3 +20,8 @@ for i in range(T):
                 dp[i][j] = max(dp[i][j], dp[i - 1][j - k] + a[j])
             ans = max(ans, dp[i][j])
     print(ans)
+
+T=int(input())
+INF=10**18
+for i in range(T):
+    solve()
