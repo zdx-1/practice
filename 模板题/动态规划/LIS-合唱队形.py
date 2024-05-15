@@ -30,3 +30,23 @@ for i in range(N):#数组反转求最长递增子序列的dp2
 for i in range(N):
   dp3[i]=dp1[i]+dp2[N-1-i]-1#自身重复需要减去1
 print(min(N-max(dp1),N-max(dp2),N-max(dp3)))
+
+"""
+n = int(input())
+a = [0] + list(map(int,input().split()))
+dp1 = [0] * (n + 1)
+for i in range(1, n + 1):
+    dp1[i] = 1
+    for j in range(1,i):
+        if a[j] < a[i]:
+            dp1[i] = max(dp1[i],dp1[j] + 1)
+
+dp2 = [0] * (n + 1)
+for i in range(n,0,-1):
+    dp2[i] = 1
+    for j in range(i + 1,n + 1):
+        if a[j] < a[i]:
+            dp2[i] = max(dp2[i],dp2[j] + 1)
+ans = max(dp1[i] + dp2[i] - 1 for i in range(1,n + 1))
+print(n - ans)
+"""
