@@ -1,0 +1,31 @@
+"""
+https://www.luogu.com.cn/problem/P5736
+"""
+n=int(input())
+judge=[True]*int(1e5+5)
+a=list(map(int,input().split()))
+judge[1]=False
+for i in a:
+    for j in range(2,i):
+        if i%j==0:
+            judge[i]=False
+for i in a:
+    if judge[i]==True:
+        print(i,end=" ")
+
+
+# def is_Prime(x):
+#     for i in range(2,x):
+#         if x%i==0:
+#             return False
+#         else:
+#             return True
+# d=[]
+# n=int(input())
+# a=list(map(int,input().split()))
+# for i in range(len(a)):
+#     if is_Prime(a[i]):
+#         d.append(a[i])
+# if d:
+#     for i in d:
+#         print(i,end=" ")
