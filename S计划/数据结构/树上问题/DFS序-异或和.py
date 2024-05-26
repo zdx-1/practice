@@ -1,5 +1,5 @@
 """
-https://www.lanqiao.cn/problems/4385/learning
+https://www.lanqiao.cn/problems/3549/learning
 """
 n, m = map(int, input().split())
 v = [0] + list(map(int, input().split()))
