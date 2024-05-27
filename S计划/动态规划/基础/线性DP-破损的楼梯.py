@@ -8,17 +8,17 @@ https://www.lanqiao.cn/problems/3367/learning
 时间复杂度：O(n)
 空间复杂度：O(n)
 """
-N=int(1e5+10)
-mod=int(1e9+7)
-n,m=map(int,input().split())
-a=list(map(int,input().split()))
-vis=[0]*N
-for i in a: vis[i]=1
-dp=[0]*N
-dp[0]=1
-dp[1]=1-vis[1]
-for i in range(2,n+1):
+N = int(1e5 + 10)
+mod = int(1e9 + 7)
+n, m = map(int, input().split())
+a = list(map(int, input().split()))
+vis = [0] * N
+for i in a: vis[i] = 1
+dp = [0] * N
+dp[0] = 1
+dp[1] = 1 - vis[1]
+for i in range(2, n + 1):
     if vis[i]:
         continue
-    dp[i]=(dp[i-1]+dp[i-2])%mod
+    dp[i] = (dp[i - 1] + dp[i - 2]) % mod
 print(dp[n])

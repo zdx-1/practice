@@ -8,7 +8,6 @@ for _ in range(n - 1):
     u, va = map(int, input().split())
     g[u].append(va)
     g[va].append(u)
-
 tree = [0] * (n + 1)
 a = [[0, 0] for _ in range(n + 1)]  # 存dfs序
 cnt = 0
