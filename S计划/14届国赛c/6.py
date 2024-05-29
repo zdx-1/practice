@@ -34,3 +34,4 @@ for j in s:
     k = k * j
 num += k
 print(num % 1000000007)
+

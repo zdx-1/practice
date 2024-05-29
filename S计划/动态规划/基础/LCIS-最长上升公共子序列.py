@@ -7,7 +7,7 @@ import sys
 
 n, m = map(int, input().split())
 s = list(map(int, input().split()))
-t = list(map(int , input().split()))
+t = list(map(int, input().split()))
 
 f = [0] * (m + 1)
 ans = 0

@@ -46,11 +46,11 @@ i个正整数如果不能包含a[i]时，
 则问题解决。
 其实单看这个改变量感觉也挺像递推公式。
 """
-n,x=map(int,input().split())
-a=[0]+list(map(int,input().split()))
-dp=[[0]*64 for _ in range(n+1)]
-dp[0][0]=1
-for i in range(1,n+1):
+n, x = map(int, input().split())
+a = [0] + list(map(int, input().split()))
+dp = [[0] * 64 for _ in range(n + 1)]
+dp[0][0] = 1
+for i in range(1, n + 1):
     for j in range(64):
-        dp[i][j]=(dp[i-1][j]+dp[i-1][j^a[i]])%998244353
+        dp[i][j] = (dp[i - 1][j] + dp[i - 1][j ^ a[i]]) % 998244353
 print(dp[n][x])
