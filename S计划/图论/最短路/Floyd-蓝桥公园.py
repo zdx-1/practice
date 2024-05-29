@@ -28,11 +28,38 @@ def floyd():
             for j in range(1, n + 1):
                 dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j])
 
+
 n, m, q = map(int, input().split())
 INF = 0x3f3f3f3f3f3f3f3f
 dp = [[INF for _ in range(n + 50)] for _ in range(n + 50)]
 for i in range(1, m + 1):
     u, v, w = map(int, input().split())
+    dp[u][v] = dp[v][u] = min(dp[u][v], w)
+floyd()
+for _ in range(q):
+    start, end = map(int, input().split())
+    if dp[start][end] == INF:
+        print(-1)
+    elif start == end:
+        print(0)
+    else:
+        print(dp[start][end])
+
+
+#第二遍
+def floyd():
+    global dp
+    for k in range(1, n + 1):
+        for i in range(1, n + 1):
+            for j in range(1, n + 1):
+                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j])
+
+
+n, m, q = map(int, input().split())
+INF = 0x3f3f3f3f3f3f3f3f3f
+dp = [[INF for _ in range(n + 50)] for i in range(n + 50)]
+for i in range(1, m + 1):
+    u , v, w = map(int, input().split())
     dp[u][v] = dp[v][u] = min(dp[u][v], w)
 floyd()
 for _ in range(q):

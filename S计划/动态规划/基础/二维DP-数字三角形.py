@@ -16,10 +16,11 @@ for i in range(n):
 dp=[[0]*n for i in range(n)]
 for i in range(n):
     for j in range(i+1):
-        if j==0: 
+        if j==0:
             dp[i][j]=dp[i-1][j]+a[i][j]
         elif j==i:
             dp[i][j]=dp[i-1][j-1]+a[i][j]
         else:
             dp[i][j]=max(dp[i-1][j],dp[i-1][j-1])+a[i][j]
 print(max(dp[n-1]))
+

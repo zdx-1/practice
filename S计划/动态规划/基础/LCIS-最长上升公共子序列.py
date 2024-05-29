@@ -18,3 +18,10 @@ for i in range(n):
         if s[i] > t[j] and per < f[j + 1]: per = f[j + 1]
         if ans < f[j + 1]: ans = f[j + 1]
 print(ans)
+
+
+
+
+
+
+
