@@ -48,20 +48,36 @@
 # print(ans)
 
 """LIS"""
-N = int(input())
-mylist = list(map(int, input().split()))
-dp1 = [1] * N
-dp2 = [1] * N
-dp3 = [0] * N
-for i in range(N):
-    for j in range(i):
-        if mylist[i] > mylist[j]:
-            dp1[i] = max(dp1[i], dp1[j] + 1)
-mylist.reverse()
-for i in range(N):
-    for j in range(i):
-        if mylist[i] > mylist[j]:
-            dp2[i] = max(dp2[i], dp2[j] + 1)
-for i in range(N):
-    dp3[i] = dp1[i] + dp2[N - 1 - i] - 1
-print(min(N - max(dp1), N - max(dp2), N - max(dp3)))
+# N = int(input())
+# mylist = list(map(int, input().split()))
+# dp1 = [1] * N
+# dp2 = [1] * N
+# dp3 = [0] * N
+# for i in range(N):
+#     for j in range(i):
+#         if mylist[i] > mylist[j]:
+#             dp1[i] = max(dp1[i], dp1[j] + 1)
+# mylist.reverse()
+# for i in range(N):
+#     for j in range(i):
+#         if mylist[i] > mylist[j]:
+#             dp2[i] = max(dp2[i], dp2[j] + 1)
+# for i in range(N):
+#     dp3[i] = dp1[i] + dp2[N - 1 - i] - 1
+# print(min(N - max(dp1), N - max(dp2), N - max(dp3)))
+
+
+# n = list(map(int, list(str(input()))))
+# n.sort()
+# cnt = n.count(0)
+# maxn = ""
+# minn = str(n[cnt])
+# if cnt > 0:
+#     minn += str("0" * cnt)
+# for i in n[::-1]:
+#     maxn += str(i)
+# for i in n[cnt + 1::1]:
+#     minn += str(i)
+# print(maxn)
+# print(minn)
+

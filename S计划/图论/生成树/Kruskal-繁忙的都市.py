@@ -7,7 +7,7 @@ def kruskal():
         Map.append([w, u, v])  # 注意第一个参数是边权
     Map.sort()
 
-    # 并查集
+    # 4并查集
     p = list(range(n+1))
     def root(x):
         if x != p[x]:
